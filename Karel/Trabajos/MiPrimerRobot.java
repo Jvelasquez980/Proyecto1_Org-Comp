@@ -12,6 +12,7 @@ public static void main(String [] args)
 Robot Karel = new Robot(1, 1, East, 0);
 Robot Yandel = new Robot(1, 1, East, 0, Color.blue);
 // Mover el robot 4 pasos
+// IMPORTANTE ES A PROPO
 Karel.move();
 Yandel.move();
 Karel.move();
@@ -27,11 +28,11 @@ Karel.pickBeeper();
 Karel.pickBeeper();
 // Girar a la izquierda y salir de los muros
 Karel.turnLeft();
+Karel.move();
+Yandel.move();
+Karel.move();
 Yandel.turnLeft();
 Yandel.move();
-Karel.move();
-Yandel.move();
-Karel.move();
 // Poner los beepers fuera de los muros
 Karel.putBeeper();
 Karel.putBeeper();
@@ -42,6 +43,6 @@ Karel.putBeeper();
 Karel.move();
 Yandel.move();
 Karel.turnOff();
-Yandel.turnOff();
+Yandel.turnOff();// Aqui se estan ejecutando en un mismo hilo y yandel termina en una calle atras
 }
 }
